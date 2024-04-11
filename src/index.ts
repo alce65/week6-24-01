@@ -1,7 +1,7 @@
 import { createServer } from 'http';
 import 'dotenv/config';
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT ?? 3000;
 
 const server = createServer((req, res) => {
   if (req.method !== 'GET') {
@@ -18,4 +18,6 @@ const server = createServer((req, res) => {
   res.end('Hola gentes');
 });
 
-server.listen(port, () => console.log(`Server is running on port ${port}`));
+server.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});

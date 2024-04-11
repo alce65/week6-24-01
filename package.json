@@ -10,7 +10,8 @@
     "start:mon": "cross-env  NODE_ENV=dev PORT=3400 nodemon dist/index.js",
     "build": "tsc",
     "dev": "tsc -w",
-    "test": "cross-env NODE_ENV=test jest"
+    "test": "cross-env NODE_ENV=test jest",
+    "lint": "eslint . --ext .ts"
   },
   "keywords": [],
   "author": "",

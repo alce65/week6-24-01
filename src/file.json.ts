@@ -1,19 +1,12 @@
 import { readFile } from 'fs/promises';
 
-interface ErrnoException extends Error {
-  errno?: number | undefined;
-  code?: string | undefined;
-  path?: string | undefined;
-  syscall?: string | undefined;
-}
-
-export const readJSON = async (source: string) => {
+export const readJson = async (source: string) => {
   try {
     const data = await readFile(source, { encoding: 'utf-8' });
-    return JSON.parse(data);
+    return JSON.parse(data) as Record<string, unknown>;
   } catch (error) {
-    console.error((error as ErrnoException).message);
+    console.error((error as NodeJS.ErrnoException).message);
   }
 };
 
-console.log(await readJSON('db.json'));
+console.log(await readJson('db.json'));

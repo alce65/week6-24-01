@@ -14,7 +14,7 @@ const main = () => {
   }
 
   if (options.admin) {
-    admin = options.admin;
+    admin = options.admin as string;
   }
 
   console.log('Admin:', admin);
