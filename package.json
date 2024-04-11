@@ -5,9 +5,12 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "start": "cross-env NODE_ENV=prod dist/index.js",
+    "start:dev": "cross-env NODE_ENV=dev PORT=3400 node --watch --env-file=.env dist/index.js",
+    "start:mon": "cross-env  NODE_ENV=dev PORT=3400 nodemon dist/index.js",
     "build": "tsc",
     "dev": "tsc -w",
-    "test": "jest"
+    "test": "cross-env NODE_ENV=test jest"
   },
   "keywords": [],
   "author": "",
@@ -28,5 +31,10 @@
     "jest-ts-webcompat-resolver": "^1.0.0",
     "ts-jest": "^29.1.2",
     "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.4.5",
+    "nodemon": "^3.1.0"
   }
 }
