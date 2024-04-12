@@ -5,14 +5,14 @@ module.exports = {
     node: true,
     jest: true,
   },
-  // extends: ['xo', 'prettier'],
+  extends: ['xo'],
   overrides: [
     {
       extends: ['xo-typescript', 'prettier'],
       files: ['*.ts', '*.tsx'],
     },
   ],
-  // parser: '@typescript-eslint/parser',
+  //parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
